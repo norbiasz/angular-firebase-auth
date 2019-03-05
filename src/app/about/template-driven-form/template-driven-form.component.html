@@ -1,0 +1,43 @@
+<h4>Template driven</h4>
+<!-- <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm"> -->
+<form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+  <div style="display: inline-grid;">
+    <label for="topic">Temat:</label>
+    <input [(ngModel)]="message.topic" #topic="ngModel" type="text" id="topic" name="topic" required>
+    <div *ngIf="!topic.valid && topic.dirty">Pole wymagane!</div>
+
+
+    <label for="message">Wiadomość:</label>
+    <textarea [(ngModel)]="message.message" #msg="ngModel" rows="4" cols="50" minlength="20" id="message" name="message" required></textarea>
+    <div *ngIf="msg.errors && msg.errors.minlength">min ilośc znaków  20</div>
+    <div *ngIf="!msg.valid && msg.dirty">Pole wymagane!</div>
+
+
+    <label for="name">Name:</label>
+    <input [(ngModel)]="message.name" #name="ngModel" type="text" id="name" name="name" required>
+    <div *ngIf="!name.valid && name.dirty">Pole wymagane!</div>
+
+
+    <label for="email">E-mail:</label>
+    <input [(ngModel)]="message.email" #email="ngModel" type="email" id="email" name="email" email required>
+    <div *ngIf="!email.valid && email.dirty">Pole wymagane!</div>
+    <div *ngIf="email.errors && email.errors.email">Zły adres email</div>
+
+    <label for="course">Który kurs jest najfajniejszy?</label>
+    <select [(ngModel)]="message.course" id="course" name="course">
+      <option *ngFor="let course of courses" [value]="course">{{course}}</option>
+    </select>
+
+    <div>
+      <label for="bot">Jesteś botem?</label>
+      <input [(ngModel)]="message.bot" [value]="true" type="radio" id="bot" name="bot">Tak
+      <input [(ngModel)]="message.bot" [value]="false" type="radio" id="bot" name="bot">Nie
+    </div>
+
+    <!-- <button type="submit" [disabled]="!contactForm.valid" >Wyslij</button> -->
+    <button type="submit">Wyslij</button>
+    <button type="reset" (click)="reset()">Reset</button>
+
+
+  </div>
+</form>

@@ -1,0 +1,9 @@
+<app-info></app-info>
+<p>
+  Nasza lista kursów
+</p>
+
+<div *ngFor="let c of courses">
+    {{c.title}}
+    <button [routerLink]="[c.id]">Więcej</button>
+</div>
