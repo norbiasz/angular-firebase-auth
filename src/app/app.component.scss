@@ -1,3 +1,16 @@
 a.active {
-  color: red;
+  background-color: rgb(0, 255, 179) !important;
+  color: white !important;
+}
+
+nav {
+  padding-bottom: 30px;
+  a {
+    margin: 0px 5px;
+    padding: 5px;
+    background-color: rgb(45, 129, 255);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+  }
 }

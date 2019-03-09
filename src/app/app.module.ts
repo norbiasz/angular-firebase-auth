@@ -1,33 +1,38 @@
-import { AboutModule } from './about/about.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 import { DataBaseService } from './data-base.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { CoursesComponent } from './courses/courses.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
-import { CoursesListComponent } from './courses/courses-list/courses-list.component';
-import { InfoComponent } from './shared/info/info.component';
 import { SharedModule } from './shared/shared.module';
+import { AngularFireModule } from '@angular/fire';
 
+
+ // Initialize Firebase
+ const config = {
+  apiKey: 'AIzaSyDqR-T5X9bo-5tbE1giL3YomVy0DDDEcxA',
+  authDomain: 'ng-todo-87956.firebaseapp.com',
+  databaseURL: 'https://ng-todo-87956.firebaseio.com',
+  projectId: 'ng-todo-87956',
+  storageBucket: 'ng-todo-87956.appspot.com',
+  messagingSenderId: '962084963902'
+};
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    CoursesComponent,
-    NotFoundComponent,
-    CourseDetailComponent,
-    CoursesListComponent
+    AppComponent
   ],
   imports: [
+    // AboutModule,
+    // CoursesModule,
+    // HomeModule,
+    // NotFoundModule,
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    AngularFireModule.initializeApp(config),
+    AngularFireAuthModule,
+    SharedModule,
   ],
   providers: [DataBaseService],
   bootstrap: [AppComponent]

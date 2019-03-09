@@ -1,5 +1,6 @@
 import { InfoComponent } from './info/info.component';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +12,8 @@ import { NgModule } from '@angular/core';
 
   ],
   exports: [
-    InfoComponent
+    InfoComponent,
+    FormsModule
   ]
 })
 export class SharedModule { }
