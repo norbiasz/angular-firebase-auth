@@ -28,7 +28,7 @@
 
     <label>Czego chcesz się nauczyć?</label>
     <div formArrayName="questions">
-      <div *ngFor="let question of contactForm.get('questions').controls; let i = index">
+      <div *ngFor="let question of contactForm.get('questions').get('controls'); let i = index">
         {{i+1}}<input type="text" [formControlName]="i">
       </div>
       <div *ngIf="contactForm.get('questions').errors && contactForm.get('questions').errors['dostepDoKursu']">Brak uprawnień</div>

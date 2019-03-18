@@ -1,3 +1,14 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+}
+
 a.active {
   background-color: rgb(0, 255, 179) !important;
   color: white !important;
@@ -5,6 +16,8 @@ a.active {
 
 nav {
   padding-bottom: 30px;
+  display: flex;
+
   a {
     margin: 0px 5px;
     padding: 5px;
